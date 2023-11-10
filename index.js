@@ -5,17 +5,10 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
-  res.end('<!DOCTYPE html>
-          <html>
-          <head>
-          </head>
-          <body>
-          <button onclick="run()">RUN</button>
-          <script>
+  res.end('<script>
           const run = ()=> alert("hello world");
-          </script>
-          </body>
-          </html>');
+        run();  
+</script>');
 });
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
